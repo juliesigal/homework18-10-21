@@ -16,7 +16,7 @@ targil 3:
 import random
 
 def luckynum():
-    lucky = random.randint(1,11)
+    lucky = random.randint(1,101)
     tries = 0
     while True:
         num = int(input("please pick a number: "))
