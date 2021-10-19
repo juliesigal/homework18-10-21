@@ -22,9 +22,9 @@ def luckynum():
         num = int(input("please pick a number: "))
         tries += 1
         if num < lucky:
-            print("lower number")
+            print("too low")
         elif num > lucky:
-            print("higher number")
+            print("too high")
         else:
             print("bingo")
             break
@@ -36,23 +36,27 @@ targil 4:
   
 import random
 
-def luckynum3():
-    highest = 0
-    for i in range(0,3):
-        lucky = random.randint(1, 10)
-        tries = 0
-        while True:
-            num = int(input("please pick a number: "))
-            tries += 1
-            if num < lucky:
-                print("too low")
-            elif num > lucky:
-                print("to high")
-            else:
-                print("bingo")
-                break
-        if tries > highest:
-            highest = tries
-    print("the highest score: ", highest)
+def luckynum():
+    lucky = random.randint(1,100)
+    tries = 0
+    while True:
+        num = int(input("please pick a number: "))
+        tries += 1
+        if num < lucky:
+            print("too low")
+        elif num > lucky:
+            print("too high")
+        else:
+            print("bingo")
+            break
+    return tries
 
-luckynum3()  
+
+for i in range(0,3):
+    result = luckynum()
+    if i == 0:
+        min_tries = result
+    elif result > min_tries:
+        min_tries = result
+
+print(f"minimum tries is: {min_tries}")
